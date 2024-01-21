@@ -1,0 +1,32 @@
+---
+
+import ExperienceItem from '../components/ExperienceItem.astro';
+
+const EXPERIENCE = [
+    {
+        title: "Desarrollador Web - FullStack",
+        date: "Junio 2019 - Actualidad",
+        description: 
+        "Desarrollo de aplicaciones web Manejo de y framework de programación PHP (Codeigniter) Bootstrap framework, Js, JQuery Consumo de API, Manipulación de Base de datos SQL Angular",
+        link: ""
+    },
+    {
+        title: "Consultor Oracle",
+        date: "Junio 2018- Abril 2019",
+        description: "Consultor Oracle con BI Publisher",
+        link: ""
+    }
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-2">        
+    
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
+
