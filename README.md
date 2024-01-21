@@ -1,6 +1,8 @@
 # Portafolio Web
 
 
+![Ejemplo de sitio web](public/init_page.png)
+
 
 ```sh
 npm create astro@latest -- --template basics
