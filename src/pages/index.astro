@@ -10,6 +10,8 @@ import Social from '../components/Social.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Projects from '../components/Projects.astro';
+import Profile from '@/components/icons/Profile.astro';
+import Aboutme from '@/components/Aboutme.astro';
 ---
 
 <Layout 
@@ -17,7 +19,7 @@ import Projects from '../components/Projects.astro';
 	description= "Portafolio"
 >
 	<main class="px-4">
-		<SectionContainer id="home" class="py-44 pb-20">
+		<SectionContainer id="home" class="py-40 pb-20">
 			<img
 				class="rounded-full size-12 mb-4"
 				src="https://media.licdn.com/dms/image/D5603AQFkVkQBObpeTA/profile-displayphoto-shrink_800_800/0/1688678483678?e=2147483647&v=beta&t=qI_Yg0ryLi0LQIvuR39btw-P_AIfUhTcdEZboYGDI0o" 
@@ -70,9 +72,13 @@ import Projects from '../components/Projects.astro';
 			</h2>
 			<Projects></Projects>
 		</SectionContainer>
+		<SectionContainer id="forme">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Profile class="size-8"></Profile>
+				Sobre mi
+			</h2>
+			<Aboutme />
+		</SectionContainer>
 	</main>
 </Layout>
 
-<style>
-
-</style>
