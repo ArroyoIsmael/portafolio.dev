@@ -2,6 +2,9 @@
 import HtmlIcon  from './icons/Html.astro'
 import CssIcon  from './icons/Css.astro'
 import JsIcon  from './icons/Js.astro'
+import Linkbutton from './Linkbutton.astro';
+import Github from './icons/Github.astro';
+import Web from './icons/Web.astro';
 
 const TAGS = {
     HTML: {
@@ -26,6 +29,7 @@ const PROJECTS = [
         title: "Encriptador",
         description: "Encriptador y desencriptador de texto",
         link: "https://arroyoismael.github.io/EncrypText/",
+        github:"https://github.com/ArroyoIsmael/EncrypText.git",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
         image: "./projects/encriptador.webp"
     }
@@ -51,17 +55,17 @@ const PROJECTS = [
                     ))
                 }
             </ul>
-            <img class="rounded shadow-2xl shadow-white/10 mb-2" 
+            <img loading="lazy" class="rounded shadow-2xl shadow-white/10 mb-2" 
             src={project.image} alt="Captura de pantalla de proyecto">
-            {
-                project.link && (
-            <a href={ project.link } target="_blank" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
-                Ver proyecto...
-                <svg class="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-            </a>
-            )}
+            <footer class="flex gap-x-4 items-end justify-start mt-4">
+                <Linkbutton link={project.github}>
+                    <Github class="size-6" />Ver código fuente
+                </Linkbutton>
+                <Linkbutton link={project.link}>
+                    <Web class="size-6" />Ir al sitio web
+                </Linkbutton>
+            </footer>
         </article>
+        
     ))
 }
