@@ -5,6 +5,9 @@ import JsIcon  from './icons/Js.astro'
 import Linkbutton from './Linkbutton.astro';
 import Github from './icons/Github.astro';
 import Web from './icons/Web.astro';
+import LaravelIcon from './icons/Laravel.astro';
+import MysqlIcon from './icons/Mysql.astro';
+import PhpIcon from './icons/Php.astro';
 
 const TAGS = {
     HTML: {
@@ -21,7 +24,22 @@ const TAGS = {
         name: "JavaScript",
         class: "bg-yellow-500/50 text-white",
         icon: (JsIcon)
-    }
+    },
+    LARAVEL: {
+        name: "Laravel 10",
+        class: "bg-gray-600 text-red-600",
+        icon: (LaravelIcon)
+    },
+    PHP: {
+        name: "Php 8",
+        class: "bg-indigo-500/50 text-white",
+        icon: (PhpIcon)
+    },
+    MYSQL: {
+        name: "Mysql 8",
+        class: "bg-orange-300/50 text-white",
+        icon: (MysqlIcon)
+    },
 
 };
 const PROJECTS = [
@@ -32,13 +50,21 @@ const PROJECTS = [
         github:"https://github.com/ArroyoIsmael/EncrypText.git",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
         image: "./projects/encriptador.webp"
+    },
+    {
+        title: "Blog Administrable",
+        description: "Blog autoadministrable, creación de posts, categorías, roles y permisos de usuarios",
+        // link: "https://arroyoismael.github.io/EncrypText/",
+        github:"https://github.com/ArroyoIsmael/Blog-App.git",
+        tags: [TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL],
+        image: "./projects/blog-app.webp"
     }
 ];
 ---
 
 {
     PROJECTS.map(project => (
-        <article>
+        <article class="mb-10">
 
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2"> {project.title} </h3>
             <p class="text-lg mb-4 text-pretty"> {project.description}</p>
@@ -61,9 +87,12 @@ const PROJECTS = [
                 <Linkbutton link={project.github}>
                     <Github class="size-6" />Ver código fuente
                 </Linkbutton>
-                <Linkbutton link={project.link}>
-                    <Web class="size-6" />Ir al sitio web
-                </Linkbutton>
+                { 
+                    project.link &&
+                    <Linkbutton link={project.link}>
+                            <Web class="size-6" />Ir al sitio web
+                        </Linkbutton>
+                }
             </footer>
         </article>
         
